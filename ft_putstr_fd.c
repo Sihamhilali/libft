@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 11:57:27 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/20 21:47:27 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/22 00:53:02 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{
-		write (fd, &s[i], 1)
+		write (fd, &s[i], 1);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:52:18 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/20 22:25:22 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/22 13:33:53 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_count(char const *s, char c)
 	{
 		while (s[i] == c && s[i])
 		i++;
-		if (s[i] != c)
+		if (s[i] != c && s[i])
 		count++;
 		while (s[i] && s[i] != c)
 		i++;
@@ -39,7 +39,7 @@ int	count_word(char const *s, char c)
 	i = 0;
 	w = 0;
 	while (s[i] && s[i] == c)
-	i++;
+		i++;
 	while (s[i] && s[i] != c)
 	{
 		w++;
@@ -56,7 +56,7 @@ char	*ft_table(char const *s, char c)
 
 	len = count_word(s, c);
 	i = 0;
-	ptr = malloc(sizeof(char) * len + 1);
+	ptr = malloc(sizeof(char) * (len + 1));
 	while (i < len)
 	{
 		ptr[i] = s[i];
@@ -66,7 +66,7 @@ char	*ft_table(char const *s, char c)
 	return (ptr);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const	*s, char c)
 {
 	char	**str;
 	int		i;
@@ -74,8 +74,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	w = ft_count(s, c);
-	str = (char **)malloc(sizeof(char *)) * (w + 1));
+	str = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -84,12 +83,13 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		if (s[i] && s[i] != c)
+		if (s[i])
 		{
 			str[w++] = ft_table(&s[i], c);
+			i++;
 		}
 		while (s[i] && s[i] != c)
-			i++;
+		i++;
 	}
 	str[w] = 0;
 	return (str);

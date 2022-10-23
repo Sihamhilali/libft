@@ -6,11 +6,11 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:00:29 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/18 17:50:25 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/22 09:30:44 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *string)
 {

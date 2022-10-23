@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: selhilal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 13:58:01 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/18 17:30:05 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/23 19:32:31 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ void	*ft_memchr(const void *str, int c, size_t n)
 {
 	size_t	i;
 	char	*h;
+	char	find;
 
+	find = (char)c;
 	h = (char *)str;
 	i = 0;
 	while (i < n)
 	{
-		if (h[i] == c)
-			return (h + i);
+		if (h[i] == find)
+			return ((void *)h + i);
 		i++;
 	}
 	return (NULL);
