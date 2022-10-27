@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:52:18 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/22 13:33:53 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/25 22:00:04 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	ft_count(char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
-		i++;
+			i++;
 		if (s[i] != c && s[i])
-		count++;
+			count++;
 		while (s[i] && s[i] != c)
-		i++;
+			i++;
 	}
 	return (count);
 }
@@ -57,6 +57,8 @@ char	*ft_table(char const *s, char c)
 	len = count_word(s, c);
 	i = 0;
 	ptr = malloc(sizeof(char) * (len + 1));
+	if (!ptr)
+		return (NULL);
 	while (i < len)
 	{
 		ptr[i] = s[i];
@@ -66,7 +68,23 @@ char	*ft_table(char const *s, char c)
 	return (ptr);
 }
 
-char	**ft_split(char const	*s, char c)
+void	*ft_free(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		split[i] = 0;
+		i++;
+	}
+	free(split);
+	split = 0;
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	int		i;
@@ -84,12 +102,11 @@ char	**ft_split(char const	*s, char c)
 		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
-		{
-			str[w++] = ft_table(&s[i], c);
-			i++;
-		}
+			str[w++] = ft_table(&s[i++], c);
+		if (w > 0 && !str[w - 1])
+			return (ft_free(str));
 		while (s[i] && s[i] != c)
-		i++;
+			i++;
 	}
 	str[w] = 0;
 	return (str);

@@ -6,12 +6,11 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:37:08 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/22 10:22:42 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/25 21:36:43 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<string.h>
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {

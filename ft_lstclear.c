@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 19:16:01 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/22 13:28:27 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/24 16:49:36 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	tmp = *lst;
 	while (tmp)
 	{
-		tmp = (*lst) -> next;
+		tmp = (*lst)-> next;
 		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}

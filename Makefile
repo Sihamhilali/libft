@@ -6,7 +6,7 @@
 #    By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 11:35:28 by selhilal          #+#    #+#              #
-#    Updated: 2022/10/23 20:33:18 by selhilal         ###   ########.fr        #
+#    Updated: 2022/10/25 20:30:06 by selhilal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,9 +46,8 @@ $(NAME): $(OBJS)
 clean:
 	rm -f $(OBJS) $(BONUS_OBJ) 
 
-%.o : %.c	libft.h
-	$(CC) $(CFLAGS) -o $@ -c $<
-
+%.o : %.c
+	$(CC) $(CFLAGS) -o $@ -c $< 
 fclean: clean
 	rm -f $(NAME)
 
