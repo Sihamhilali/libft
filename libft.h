@@ -6,13 +6,13 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:05:20 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/26 23:08:56 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/29 01:37:03 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdio.h>
+
 # include <stdlib.h>
 # include <unistd.h>
 

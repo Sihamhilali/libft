@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 11:13:34 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/25 21:35:46 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:43:47 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 void	ft_lstadd_front(t_list	**lst, t_list	*new)
 {
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
 	new -> next = *lst;
 	*lst = new;
 }

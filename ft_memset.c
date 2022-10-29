@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:56:22 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/27 00:22:56 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/27 23:44:02 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-//int main()
-//{
-//	char  *t;
-//	t = malloc(sizeof(char) * 1);
-//	ft_memset(t, 'a', 1000000);
-//	t[999999] = 'b';
-//	printf("%c\n",t[999999]);
-//}

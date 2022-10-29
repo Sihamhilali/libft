@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:40:35 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/23 14:56:26 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/27 15:27:17 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*copied;
-	char	*becopied;
+	char	*d;
+	char	*s;
 
-	copied = (char *)dest;
-	becopied = (char *)src;
-	if (becopied < copied)
+	d = (char *)dest;
+	s = (char *)src;
+	if (s < d)
 	{
 		while (n-- > 0)
 		{
-			copied[n] = becopied[n];
+			d[n] = s[n];
 		}
 		return (dest);
 	}

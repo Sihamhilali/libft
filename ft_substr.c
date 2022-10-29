@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:17:03 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/25 22:14:31 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:17:10 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ptr[i] = 0;
 		return (ptr);
 	}
-	ptr = malloc(sizeof(char));
-	if (!ptr)
-		return (0);
-	ptr[0] = '\0';
+	ptr = ft_strdup("");
 	return (ptr);
 }

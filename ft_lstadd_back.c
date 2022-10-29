@@ -6,7 +6,7 @@
 /*   By: selhilal <selhilal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:40:54 by selhilal          #+#    #+#             */
-/*   Updated: 2022/10/21 15:09:37 by selhilal         ###   ########.fr       */
+/*   Updated: 2022/10/29 01:52:15 by selhilal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	ft_lstadd_back(t_list	**lst, t_list	*new)
 {
-	t_list	*p;
-
+	if (!new)
+		return ;
 	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
-	p = ft_lstlast(*lst);
-	p -> next = new;
+	ft_lstlast(*lst)->next = new;
 }
